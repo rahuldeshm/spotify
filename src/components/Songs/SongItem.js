@@ -13,6 +13,7 @@ function SongItem(props) {
         props.e._id === ctx.activeSong._id ? classes.activeitem : classes.item
       }
       onClick={() => {
+        localStorage.setItem("activeSong", JSON.stringify(props.e));
         ctx.setActiveS(props.e);
         ctx.setManu();
       }}
