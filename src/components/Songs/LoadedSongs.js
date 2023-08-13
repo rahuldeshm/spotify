@@ -24,8 +24,8 @@ function LoadedSongs(props) {
         />
         <BiSearch className={classes.icon} size={20} />
       </Row>
-      {filtered.map((e) => {
-        return <SongItem e={e} key={e._id} />;
+      {filtered.map((e, index) => {
+        return <SongItem e={e} index={index} key={e._id} />;
       })}
     </>
   );

@@ -32,11 +32,18 @@ function Player({ url }) {
     audioRef.current.currentTime = seekTime;
   };
   const forwordHandler = () => {
-    console.log(currentTime);
-    audioRef.current.currentTime = currentTime + 10;
+    if (ctx.songs.length - 1 < ctx.activeSong.index + 1) {
+      ctx.setActiveS(ctx.songs[0]);
+    } else {
+      ctx.setActiveS(ctx.songs[ctx.activeSong.index + 1]);
+    }
   };
   const backwordHandler = () => {
-    audioRef.current.currentTime = currentTime - 10;
+    if (ctx.activeSong.index === 0) {
+      ctx.setActiveS(ctx.songs[ctx.songs.length - 1]);
+    } else {
+      ctx.setActiveS(ctx.songs[ctx.activeSong.index - 1]);
+    }
   };
   const toggleMute = () => {
     audioRef.current.muted = !audioRef.current.muted;

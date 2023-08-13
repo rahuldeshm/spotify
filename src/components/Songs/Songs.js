@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { gql, useQuery } from "@apollo/client";
 import DataContext from "../store/data-context";
 import { MutatingDots } from "react-loader-spinner";
@@ -25,6 +25,10 @@ function Songs() {
       playlistId: ctx.active.id,
     },
   });
+  const { setAllSongs } = ctx;
+  useEffect(() => {
+    if (data) setAllSongs(data.getSongs);
+  }, [data, setAllSongs]);
   if (loading)
     return (
       <div className="spinner">
@@ -44,9 +48,8 @@ function Songs() {
   if (err) {
     return <Error />;
   }
-  if (data) {
-    return <LoadedSongs data={data} id={ctx.active.title} />;
-  }
+
+  return <LoadedSongs data={data} id={ctx.active.title} />;
 }
 
 export default Songs;

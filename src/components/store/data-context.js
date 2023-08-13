@@ -16,6 +16,7 @@ const init = ini
 
 export function ContextProvider(props) {
   const [category, setCategory] = useState([]);
+  const [songs, setSongs] = useState([]);
   const [manu, setmanu] = useState(false);
   const [theme, setTheme] = useState("rgb(0, 28, 40)");
   const [active, setActive] = useState({ id: 1, title: "For You" });
@@ -35,15 +36,23 @@ export function ContextProvider(props) {
   const setManu = () => {
     setmanu(!manu);
   };
+  const setAllSongs = (c) => {
+    const withi = c.map((e, index) => {
+      return { ...e, index };
+    });
+    setSongs(withi);
+  };
   return (
     <DataContext.Provider
       value={{
         theme,
+        songs,
         manu,
         setManu,
         category,
         active,
         activeSong,
+        setAllSongs,
         setCat: setCat,
         setActiveC,
         setActiveS,
@@ -61,6 +70,8 @@ const DataContext = React.createContext({
   activeSong: {},
   active: {},
   manu: true,
+  songs: [],
+  setAllSongs: () => {},
   setManu: () => {},
   setCat: () => {},
   setS: () => {},
