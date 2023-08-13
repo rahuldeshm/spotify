@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 export function ContextProvider(props) {
   const [category, setCategory] = useState([]);
-  const [active, setActive] = useState(1);
+  const [manu, setmanu] = useState(false);
+  const [theme, setTheme] = useState("rgb(0, 28, 40)");
+  const [active, setActive] = useState({ id: 1, title: "For You" });
   const [activeSong, setActiveSong] = useState({
     artist: "Coldplay",
     duration: 645,
@@ -22,16 +24,25 @@ export function ContextProvider(props) {
   const setCat = (c) => {
     setCategory(c);
   };
-
+  const setT = (c) => {
+    setTheme(c);
+  };
+  const setManu = () => {
+    setmanu(!manu);
+  };
   return (
     <DataContext.Provider
       value={{
+        theme,
+        manu,
+        setManu,
         category,
         active,
         activeSong,
         setCat: setCat,
         setActiveC,
         setActiveS,
+        setT,
       }}
     >
       {props.children}
@@ -40,11 +51,15 @@ export function ContextProvider(props) {
 }
 
 const DataContext = React.createContext({
+  theme: {},
   category: [],
   activeSong: {},
   active: {},
+  manu: true,
+  setManu: () => {},
   setCat: () => {},
   setS: () => {},
+  setT: () => {},
   setActiveC: () => {},
   setActiveS: () => {},
 });

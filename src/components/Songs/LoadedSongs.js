@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import DataContext from "../store/data-context";
+import React, { useState } from "react";
 import { Row } from "react-bootstrap";
 import classes from "./Songs.module.css";
 import { BiSearch } from "react-icons/bi";
@@ -7,8 +6,7 @@ import SongItem from "./SongItem";
 
 function LoadedSongs(props) {
   const [txt, setTxt] = useState("");
-  const ctx = useContext(DataContext);
-  const title = ctx.category[props.id - 1];
+
   const filtered = props.data.getSongs.filter((e) => {
     return (
       e.title.toLowerCase().indexOf(txt) >= 0 ||
@@ -18,7 +16,7 @@ function LoadedSongs(props) {
   return (
     <>
       <Row className={classes.h}>
-        <h1>{title.title}</h1>
+        <h1 className="d-none d-lg-block">{props.id}</h1>
         <input
           type="text"
           placeholder="Search Song, Artist"

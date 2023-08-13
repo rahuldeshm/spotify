@@ -17,12 +17,14 @@ const GET_PLAYLISTS = gql`
 
 function CategoryItem() {
   const { loading, error, data } = useQuery(GET_PLAYLISTS);
+  const ctx = useContext(DataContext);
+  const { setCat } = ctx;
+
   useEffect(() => {
     if (data) {
-      ctx.setCat(data.getPlaylists);
+      setCat(data.getPlaylists);
     }
-  }, [data]);
-  const ctx = useContext(DataContext);
+  }, [data, setCat]);
   if (loading)
     return (
       <div className="spinner">
@@ -44,10 +46,11 @@ function CategoryItem() {
   return (
     <Row>
       {data.getPlaylists.map((e) => {
-        const isact = ctx.active === e.id ? classes.active : classes.unactive;
+        const isact =
+          ctx.active.id === e.id ? classes.active : classes.unactive;
         return (
           <h5
-            onClick={() => ctx.setActiveC(e.id)}
+            onClick={() => ctx.setActiveC(e)}
             className={isact}
             key={`${e.id}cat`}
           >

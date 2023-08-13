@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Col, Row } from "react-bootstrap";
 import classes from "./SongItem.module.css";
 import DataContext from "../store/data-context";
 
@@ -15,10 +14,11 @@ function SongItem(props) {
       }
       onClick={() => {
         ctx.setActiveS(props.e);
+        ctx.setManu();
       }}
     >
       <div className={classes.imgdiv}>
-        <img src={props.e.photo}></img>
+        <img src={props.e.photo} alt={`${props.e.title} item`}></img>
       </div>
       <div className={classes.disc}>
         <p>{props.e.title}</p>

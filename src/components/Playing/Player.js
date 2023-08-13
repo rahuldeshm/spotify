@@ -64,7 +64,7 @@ function Player({ url }) {
         />
         <div className={classes.btns}>
           <button className={classes.sbtn}>
-            <BsThreeDots size={30} />
+            <BsThreeDots size={20} />
           </button>
           <button onClick={backwordHandler}>
             <BsFillFastForwardFill style={{ rotate: "180deg" }} size={30} />
@@ -81,9 +81,9 @@ function Player({ url }) {
           </button>
           <button onClick={toggleMute} className={classes.sbtn}>
             {isMuted ? (
-              <BsVolumeMuteFill size={30} />
+              <BsVolumeMuteFill size={20} />
             ) : (
-              <AiFillSound size={30} />
+              <AiFillSound size={20} />
             )}
           </button>
         </div>

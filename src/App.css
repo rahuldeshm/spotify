@@ -1,11 +1,59 @@
-.theme {
-  background: linear-gradient(90deg, rgb(0, 28, 34) 1%, rgba(0, 0, 0, 1) 100%);
-
-  color: white;
-}
 .spinner {
   height: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.amanu {
+  position: absolute;
+  left: -100vw;
+  top: 5rem;
+  background-color: black;
+  transition: 0.8s;
+}
+.manu {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  top: 5rem;
+  height: calc(100vh - 5rem) !important;
+  background-color: black;
+  transition: 0.8s;
+}
+.songs {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.category {
+  height: 100vh;
+}
+.select {
+  outline: none;
+  border: none;
+  margin: 1vw 1vw 0 1vw !important;
+  width: calc(100% - 2vw) !important;
+  font-size: 1.5rem;
+  padding: 5px;
+  background-color: rgb(40, 33, 24);
+  color: rgb(255, 255, 255);
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  width: 3px;
+  background-color: rgba(51, 15, 15, 0.192);
+  border-radius: 1.5px;
+}
+
+::-webkit-scrollbar-corner {
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.267);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: red;
 }

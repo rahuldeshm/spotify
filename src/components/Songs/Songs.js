@@ -22,7 +22,7 @@ function Songs() {
   const ctx = useContext(DataContext);
   const { loading, err, data } = useQuery(SONGS_QUERY, {
     variables: {
-      playlistId: ctx.active,
+      playlistId: ctx.active.id,
     },
   });
   if (loading)
@@ -45,8 +45,7 @@ function Songs() {
     return <Error />;
   }
   if (data) {
-    console.log(data);
-    return <LoadedSongs data={data} id={ctx.active} />;
+    return <LoadedSongs data={data} id={ctx.active.title} />;
   }
 }
 
