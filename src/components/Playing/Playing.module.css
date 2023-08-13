@@ -1,0 +1,17 @@
+.playing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.playing p {
+  color: gray;
+}
+.playing img {
+  width: 100%;
+  border-radius: 1rem;
+}
+.playing_row {
+  width: 60%;
+}

@@ -1,0 +1,23 @@
+.songs {
+  height: 100vh;
+  overflow: hidden;
+}
+.h {
+  padding-top: 1rem;
+  position: relative;
+}
+
+.h input {
+  width: calc(100% - 2vw);
+  margin: 1vw 1vw 0 1vw;
+  border: none;
+  outline: none;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: rgb(40, 33, 24);
+}
+.icon {
+  position: relative;
+  left: 14vw;
+  top: -1.5rem;
+}

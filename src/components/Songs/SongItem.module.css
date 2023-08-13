@@ -1,0 +1,42 @@
+.item {
+  position: relative;
+  display: flex;
+  padding: 1vh;
+  width: 100%;
+  align-items: center;
+  border-radius: 7px;
+}
+.activeitem {
+  position: relative;
+  display: flex;
+  padding: 1vh;
+  width: 100%;
+  align-items: center;
+  border-radius: 7px;
+  background-color: rgba(114, 114, 114, 0.336);
+}
+.imgdiv {
+  position: relative;
+  width: 5vw;
+  height: 5vw;
+  overflow: hidden;
+  border-radius: 2.5vw;
+}
+
+.imgdiv img {
+  background-size: cover;
+  width: 5vw;
+}
+.item p,
+.activeitem p {
+  padding: 2px;
+  margin: 0;
+}
+.disc {
+  width: 70%;
+  margin-left: 1rem;
+}
+.artist {
+  font-size: small;
+  color: gray;
+}

@@ -1,0 +1,12 @@
+.heading {
+  padding: 1rem;
+}
+.logo {
+  position: relative;
+  left: -5px;
+  top: -2px;
+}
+.rlogo {
+  position: relative;
+  top: -10px;
+}
